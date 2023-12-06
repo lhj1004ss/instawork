@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 # from django.views.decorators.csrf import csrf_exempt
-from myEmployeeList.template.form import TeamMemberForm
+from myEmployeeList.form import TeamMemberForm
 
 # Create your views here.
 # teamMembers = [
