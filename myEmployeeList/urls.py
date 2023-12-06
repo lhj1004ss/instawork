@@ -2,7 +2,8 @@ from django.urls import path, include
 from myEmployeeList import views
 
 urlpatterns = [
-  path('', views.index),
-  path('add/', views.addTeamMember),
-  path('edit/<id>/', views.editTeamMember)
+  path('', views.index, name='index'),  
+  path('add/', views.add, name='add'),
+  path('edit/', views.edit, name='edit'),
 ]
+

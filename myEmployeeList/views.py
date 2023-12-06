@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 teamMembers = [
@@ -8,48 +9,12 @@ teamMembers = [
   {'id': 4, 'firstName': 'Den', 'lastName': 'Petrie', 'email': 'den@instawork.com', 'phone':'415-310-1619', 'admin': False },
   ]
 
-def headerHTMLTemplate(title, description):
-  return f'''
-    <h2>{title}</h2>
-    <p>{description}</p>
-  '''
-def memberInfoHTMLTemplate():
-  return f'''
-    <html>
-      <body>
-        <h3>Info</h3>
-        <input/>
-        </br>
-        <input/>
-        </br>
-        <input/>
-        </br>
-        <input/>
-        <h3>Role</h3>
-      </body>
-    </html>
-  '''
-def memberListHTMLTemplate():
-  global teamMembers
-  teamMember = ''
-  for member in teamMembers:
-    teamMember += f'''<a href="/edit/{member["id"]}"><div>{member["firstName"]} {member["lastName"]}</div></div>'''
-
-  return f'''
-    <html>
-      <body>
-          <a href="/add">+</a>
-          {headerHTMLTemplate('Team Members', f'you have {len(teamMembers)} team members')}
-          {teamMember}
-      </body>
-    </html>
-  '''
 
 def index(request):
-  return HttpResponse(memberListHTMLTemplate())
+  return render(request, "index.html")
 
-def addTeamMember(request):
-  return HttpResponse('add!')
+def add(request):
+  return render(request, "add.html")
 
-def editTeamMember(request, id):
-  return HttpResponse(memberInfoHTMLTemplate() + id)
+def edit(request):
+  return render(request, "edit.html")
