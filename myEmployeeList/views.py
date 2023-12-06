@@ -12,12 +12,35 @@ from myEmployeeList.form import TeamMemberForm
 
 
 def index(request):
-  form = TeamMemberForm
-  context = {'form': form}
-  return render(request, "index.html", context)
+  return render(request, "index.html",)
 
 def add(request):
-  return render(request, "add.html")
+  form = TeamMemberForm
+  context = {'form': form}
+
+  if request.method == "POST":
+    # print('request', request)
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    email = request.POST.get('email')
+    phone_number = request.POST.get('phone_number')
+    some_field = request.POST.get('some_field')
+    print(first_name, last_name, email, phone_number, some_field)
+    
+  return render(request, "add.html", context)
+
+def addTeamMember(request):
+  if request.method == "POST":
+    # print('request', request)
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    email = request.POST.get('email')
+    phone_number = request.POST.get('phone_number')
+    print(first_name, last_name, email, phone_number)
+
+  return render(request, "index.html",)
+
+
 
 def edit(request):
   return render(request, "edit.html")
