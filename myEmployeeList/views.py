@@ -8,7 +8,9 @@ from .models import TeamMember
 
 
 def index(request):
-  return render(request, "index.html",)
+  teamMemberData = TeamMember.objects.all()
+  context = {"teamMemberData": teamMemberData}
+  return render(request, "index.html", context)
 
 def add(request):
   form = TeamMemberForm
