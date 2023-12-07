@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 # from django.views.decorators.csrf import csrf_exempt
 from myEmployeeList.form import TeamMemberForm
+from .models import TeamMember
 
 # Create your views here.
 # teamMembers = [
@@ -20,27 +21,18 @@ def add(request):
 
   if request.method == "POST":
     # print('request', request)
-    first_name = request.POST.get('first_name')
-    last_name = request.POST.get('last_name')
-    email = request.POST.get('email')
-    phone_number = request.POST.get('phone_number')
-    some_field = request.POST.get('some_field')
-    print(first_name, last_name, email, phone_number, some_field)
-    
+    # first_name = request.POST.get('first_name')
+    # last_name = request.POST.get('last_name')
+    # email = request.POST.get('email')
+    # phone_number = request.POST.get('phone_number')
+    data = TeamMember(request.POST)
+    # data = TeamMemberForm(first_name = first_name, last_name = last_name, email=email, phone_number = phone_number)
+    # print(first_name,last_name,email,phone_number)
+    # data.save()
+    data.save()
+    return redirect('/')
+
   return render(request, "add.html", context)
-
-def addTeamMember(request):
-  if request.method == "POST":
-    # print('request', request)
-    first_name = request.POST.get('first_name')
-    last_name = request.POST.get('last_name')
-    email = request.POST.get('email')
-    phone_number = request.POST.get('phone_number')
-    print(first_name, last_name, email, phone_number)
-
-  return render(request, "index.html",)
-
-
 
 def edit(request):
   return render(request, "edit.html")
