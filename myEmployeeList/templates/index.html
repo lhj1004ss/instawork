@@ -9,7 +9,7 @@
   <body>
     <a href="/add">+</a>
     {% for member in teamMemberData%}
-    <a href="{{member.id}}">
+    <a href="edit/{{member.id}}">
       <div>{{member.first_name}} {{member.last_name}}</div>
       <div>{{member.email}}</div>
       <div>{{member.phone_number}}</div>
