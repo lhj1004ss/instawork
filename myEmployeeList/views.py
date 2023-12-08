@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from myEmployeeList.form import TeamMemberForm
+from myEmployeeList.form import RoleForm
+
 from .models import TeamMember
 
 # Create your views here.
@@ -17,7 +19,10 @@ def add(request):
     if form.is_valid():
       form.save()
       return redirect('/')
-  return render(request, "add.html", context)
+  elif request.method == "GET":
+ 
+
+    return render(request, "add.html", context)
 
 def edit(request, id):
 
@@ -25,6 +30,13 @@ def edit(request, id):
     selectedTeamMemberData = TeamMember.objects.get(id = id)
     form = TeamMemberForm(instance = selectedTeamMemberData)
     context = {'form' : form}
+    if selectedTeamMemberData.regular == True:
+      selectedTeamMemberData.admin == False
+      print(selectedTeamMemberData.regular)
+    else:
+      print(selectedTeamMemberData.admin)
+      selectedTeamMemberData.admin == True
+
     return render(request, "edit.html", context)
   
 
