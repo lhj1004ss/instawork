@@ -3,7 +3,6 @@ from myEmployeeList.form import TeamMemberForm
 from .models import TeamMember
 
 # Create your views here.
-
 def index(request):
   teamMemberData = TeamMember.objects.all()
   context = {"teamMemberData": teamMemberData}

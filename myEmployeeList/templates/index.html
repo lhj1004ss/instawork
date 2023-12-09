@@ -8,12 +8,18 @@
   </head>
   <body>
     <a href="/add">+</a>
-    {% for member in teamMemberData%}
+    {% if teamMemberData %} {% for member in teamMemberData %}
     <a href="edit/{{member.id}}">
-      <div>{{member.first_name}} {{member.last_name}}</div>
+      <div>
+        <span>{{member.first_name}} {{member.last_name}} </span>
+        {% if member.member_type == "admin" %} {{member.member_type}}{% endif %}
+      </div>
+
       <div>{{member.email}}</div>
       <div>{{member.phone_number}}</div>
     </a>
-    {% endfor %}
+    {% endfor %} {% else %}
+    <div>No team member is available. Please add new member.</div>
+    {% endif %}
   </body>
 </html>
