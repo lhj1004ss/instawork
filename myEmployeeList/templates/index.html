@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>list</title>
+    <title>Team member list</title>
   </head>
   <body>
     <a href="/add">+</a>
-    {% if teamMemberData %} {% for member in teamMemberData %}
+    {% if teamMemberData %}
+    <div>You have {{teamMemberData | length}} members.</div>
+    {% endif %} {% if teamMemberData %} {% for member in teamMemberData %}
     <a href="edit/{{member.id}}">
       <div>
         <span>{{member.first_name}} {{member.last_name}} </span>
