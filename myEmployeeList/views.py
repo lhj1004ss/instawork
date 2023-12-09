@@ -21,17 +21,15 @@ def add(request):
   return render(request, "add.html", {"teamMemberForm" : teamMemberForm })
 
 def edit(request, id):
-
   if request.method == "GET":
     selectedTeamMemberData = TeamMember.objects.get(id = id)
     selectedTeamMemberForm = TeamMemberForm(instance = selectedTeamMemberData) 
     
     return render(request, "edit.html", {'selectedTeamMemberForm' : selectedTeamMemberForm })
-  
-
-
   elif request.method == "POST":
-    selectedTeamMemberData = TeamMember.objects.get(id = id)
-    
-    return redirect('/')
+    member = TeamMember.objects.get(pk=id)
+    form = TeamMemberForm(request.POST, instance = member)
+    if form.is_valid():
+      form.save()
+      return redirect('/')
 
