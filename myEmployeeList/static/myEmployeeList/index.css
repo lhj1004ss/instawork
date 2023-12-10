@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  min-width: 400px;
+}
+.add-member {
+  display: flex;
+  justify-content: right;
+  text-decoration: none;
+  font-size: 30px;
+  color: lightskyblue;
+}
+.title {
+  margin-top: -5px;
+}
+.title-desc {
+  margin-top: -15px;
+  color: lightgray;
+}
+.member-container {
+  display: flex;
+}
+.member-grid {
+  display: flex;
+  width: 100%;
+}
+.member-image {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  background: black;
+}
+.member-info {
+  margin-left: 20px;
+}
+.member-top-bottom-line {
+  padding: 15px 0 15px 0;
+  border-top: solid 3px lightgray;
+  border-bottom: solid 3px lightgray;
+}
+.member-top-line {
+  padding: 15px 0 15px 0;
+  border-top: solid 3px lightgray;
+}

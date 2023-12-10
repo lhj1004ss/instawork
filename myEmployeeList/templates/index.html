@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'myEmployeeList/index.css' %}"
+  />
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,21 +13,39 @@
     <title>Team member list</title>
   </head>
   <body>
-    <a href="/add">+</a>
-    {% if teamMemberData %}
-    <div>You have {{teamMemberData | length}} members.</div>
-    {% endif %} {% if teamMemberData %} {% for member in teamMemberData %}
-    <a href="edit/{{member.id}}">
+    <div class="list-container">
+      <a class="add-member" href="/add">+</a>
       <div>
-        <span>{{member.first_name}} {{member.last_name}} </span>
-        {% if member.member_type == "admin" %} {{member.member_type}}{% endif %}
+        <h2 class="title">Team members</h2>
+        {% if teamMemberData %}
+        <p class="title-desc">You have {{teamMemberData | length}} members.</p>
+        {% endif %}
       </div>
+      {% if teamMemberData %} {% for member in teamMemberData %}
+      <div class="member-container">
+        <a
+          href="edit/{{member.id}}"
+          class="member-grid {% if forloop.last %} member-top-bottom-line {% else %} member-top-line {% endif %}"
+        >
+          <img
+            class="member-image column"
+            src="https://s.instawork.com/static/img/logo-only.31a789713ebe.svg"
+          />
 
-      <div>{{member.email}}</div>
-      <div>{{member.phone_number}}</div>
-    </a>
-    {% endfor %} {% else %}
-    <div>No team member is available. Please add new member.</div>
-    {% endif %}
+          <div class="member-info">
+            <div>
+              <span>{{member.first_name}} {{member.last_name}} </span>
+              {% if member.member_type == "admin" %}
+              <span>{{member.member_type}}</span>{% endif %}
+            </div>
+            <div>{{member.email}}</div>
+            <div>{{member.phone_number}}</div>
+          </div>
+        </a>
+      </div>
+      {% endfor %} {% else %}
+      <div>No team member is available. Please add new member.</div>
+      {% endif %}
+    </div>
   </body>
 </html>
