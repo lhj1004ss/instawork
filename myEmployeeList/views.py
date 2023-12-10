@@ -23,12 +23,19 @@ def edit(request, id):
   if request.method == "GET":
     selectedTeamMemberData = TeamMember.objects.get(id = id)
     selectedTeamMemberForm = TeamMemberForm(instance = selectedTeamMemberData) 
-    
-    return render(request, "edit.html", {'selectedTeamMemberForm' : selectedTeamMemberForm })
+    return render(request, "edit.html", {'selectedTeamMemberForm' : selectedTeamMemberForm, 
+    'selectedTeamMemberId': id})
   elif request.method == "POST":
     member = TeamMember.objects.get(pk=id)
     form = TeamMemberForm(request.POST, instance = member)
     if form.is_valid():
       form.save()
       return redirect('/')
+
+def delete(request, id):
+  selectedTeamMemberData = TeamMember.objects.get(id = id)
+  selectedTeamMemberData.delete()
+  return redirect('/')
+
+
 
