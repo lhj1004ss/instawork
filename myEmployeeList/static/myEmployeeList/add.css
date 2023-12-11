@@ -19,9 +19,6 @@ body {
   height: 25px;
   margin-top: 10px;
 }
-.member-input-container input::placeholder {
-  color: lightgray;
-}
 .member-input-container label {
   display: none;
 }
