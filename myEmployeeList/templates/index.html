@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="{% static 'myEmployeeList/index.css' %}"
-  />
   <head>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'myEmployeeList/index.css' %}"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
           class="member-grid {% if forloop.last %} member-top-bottom-line {% else %} member-top-line {% endif %}"
         >
           <img
-            class="member-image column"
+            class="member-image"
             src="https://s.instawork.com/static/img/logo-only.31a789713ebe.svg"
           />
 

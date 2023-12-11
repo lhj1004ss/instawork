@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'myEmployeeList/edit.css' %}"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>edit</title>
   </head>
   <body>
-    <form method="post">
-      {% csrf_token %} {{selectedTeamMemberForm}}
-      <button type="submit">Save</button>
-      <a href="/delete/{{selectedTeamMemberId}}/">delete</a>
-    </form>
+    {% comment %}
+    <div class="add-member-container">
+      <div>
+        <h2 class="title">Add a team member</h2>
+        <p class="title-desc">Set email, location and role.</p>
+      </div>
+      <div class="line" />
+      <h3 class="sub-title">Info</h3>
+      <form action="/add/" method="post">
+        {% csrf_token %}
+        <div class="member-input-container add-member-container">
+          {{teamMemberForm}}
+        </div>
+        <div class="btn-container">
+          <button class="btn" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+    {% endcomment %}
+    <div class="add-member-container">
+      <div>
+        <h2 class="title">Edit team member</h2>
+        <p class="title-desc">Edit contact info, location and role.</p>
+      </div>
+      <div class="line" />
+      <h3 class="sub-title">Info</h3>
+      <form method="post">
+        {% csrf_token %}
+        <div class="member-input-container add-member-container">
+         {{selectedTeamMemberForm}}
+          <div class="btn-container">
+            <a class="btn-delete" href="/delete/{{selectedTeamMemberId}}/">delete</a>
+            <button class="btn" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+    </div>
   </body>
 </html>

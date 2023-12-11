@@ -5,9 +5,9 @@ body {
   min-width: 400px;
 }
 .add-member {
+  text-decoration: none;
   display: flex;
   justify-content: right;
-  text-decoration: none;
   font-size: 30px;
   color: lightskyblue;
 }
@@ -24,6 +24,7 @@ body {
 .member-grid {
   display: flex;
   width: 100%;
+  text-decoration: none;
 }
 .member-image {
   height: 55px;
