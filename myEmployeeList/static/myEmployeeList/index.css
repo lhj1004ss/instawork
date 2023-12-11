@@ -35,6 +35,15 @@ body {
 .member-info {
   margin-left: 20px;
 }
+div .member-info .member-name {
+  color: black;
+}
+div .member-info .member-details {
+  color: lightgray;
+}
+div .member-info .member-email {
+  margin: 4px 0 4px 0;
+}
 .member-top-bottom-line {
   padding: 15px 0 15px 0;
   border-top: solid 3px lightgray;

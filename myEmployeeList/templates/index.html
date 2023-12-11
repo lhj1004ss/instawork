@@ -18,7 +18,9 @@
       <div>
         <h2 class="title">Team members</h2>
         {% if teamMemberData %}
-        <p class="title-desc">You have {{teamMemberData | length}} members.</p>
+        <p class="title-desc">
+          You have {{teamMemberData | length}} team members.
+        </p>
         {% endif %}
       </div>
       {% if teamMemberData %} {% for member in teamMemberData %}
@@ -31,15 +33,16 @@
             class="member-image"
             src="https://s.instawork.com/static/img/logo-only.31a789713ebe.svg"
           />
-
           <div class="member-info">
-            <div>
+            <div class="member-name">
               <span>{{member.first_name}} {{member.last_name}} </span>
               {% if member.member_type == "admin" %}
               <span>{{member.member_type}}</span>{% endif %}
             </div>
-            <div>{{member.email}}</div>
-            <div>{{member.phone_number}}</div>
+            <div class="member-details">
+              <div class="member-email">{{member.email}}</div>
+              <div>{{member.phone_number}}</div>
+            </div>
           </div>
         </a>
       </div>
