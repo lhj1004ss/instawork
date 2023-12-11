@@ -37,11 +37,11 @@
             <div class="member-name">
               <span>{{member.first_name}} {{member.last_name}} </span>
               {% if member.member_type == "admin" %}
-              <span>{{member.member_type}}</span>{% endif %}
+              <span>({{member.member_type}})</span>{% endif %}
             </div>
             <div class="member-details">
-              <div class="member-email">{{member.email}}</div>
-              <div>{{member.phone_number}}</div>
+              <div class="member-number">{{member.phone_number}}</div>
+              <div>{{member.email}}</div>
             </div>
           </div>
         </a>

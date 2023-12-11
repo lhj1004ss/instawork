@@ -41,15 +41,15 @@ div .member-info .member-name {
 div .member-info .member-details {
   color: lightgray;
 }
-div .member-info .member-email {
-  margin: 4px 0 4px 0;
+div .member-info .member-number {
+  margin: 5px 0 5px 0;
 }
 .member-top-bottom-line {
   padding: 15px 0 15px 0;
-  border-top: solid 3px lightgray;
-  border-bottom: solid 3px lightgray;
+  border-top: solid 1px lightgray;
+  border-bottom: solid 1px lightgray;
 }
 .member-top-line {
   padding: 15px 0 15px 0;
-  border-top: solid 3px lightgray;
+  border-top: solid 1px lightgray;
 }

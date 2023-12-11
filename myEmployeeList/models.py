@@ -9,7 +9,7 @@ class TeamMember(models.Model):
   phone_number = models.CharField(max_length = 25, blank = False, null = False)
   
   CHOICES = [
-    ('regular', 'Regular - Can not delete members'),
+    ('regular', "Regular - Can't delete members"),
     ('admin', 'Admin - Can delete members'),
   ]
   member_type = models.CharField(max_length=10, choices=CHOICES)
