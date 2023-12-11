@@ -37,6 +37,7 @@ body {
 }
 div .member-info .member-name {
   color: black;
+  text-transform: capitalize;
 }
 div .member-info .member-details {
   color: lightgray;
