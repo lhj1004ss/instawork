@@ -2,7 +2,8 @@ body {
   display: flex;
   justify-content: center;
   text-align: left;
-  min-width: 400px;
+  width: 400px;
+  max-width: 400px;
 }
 .add-member {
   text-decoration: none;
