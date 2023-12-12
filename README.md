@@ -2,6 +2,6 @@ instawork CRUD application using DJANGO
 
 to get, add , edit and delete team members
 
-![Screenshot 2023-12-11 at 6 52 16 PM](https://github.com/lhj1004ss/instawork/assets/55503122/b68b3ceb-0b54-4fd0-ba5c-710ec3815d73)
-![Screenshot 2023-12-11 at 6 52 32 PM](https://github.com/lhj1004ss/instawork/assets/55503122/a36fbf9f-3c8c-47a0-96c5-f0b27d9616a2)
-![Screenshot 2023-12-11 at 6 52 24 PM](https://github.com/lhj1004ss/instawork/assets/55503122/86e69716-3155-49ff-a96c-649b93a1138b)
+![Screenshot 2023-12-11 at 7 02 37 PM](https://github.com/lhj1004ss/instawork/assets/55503122/4e8412b9-7f15-46cb-91d6-28be744dc617)
+![Screenshot 2023-12-11 at 6 52 32 PM](https://github.com/lhj1004ss/instawork/assets/55503122/2ff3f7e8-c324-4cc2-9958-8091e3a83ae4)
+![Screenshot 2023-12-11 at 7 02 24 PM](https://github.com/lhj1004ss/instawork/assets/55503122/8057a68b-bdbe-48ff-901d-32822a26b5ef)
