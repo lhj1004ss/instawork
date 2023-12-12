@@ -44,6 +44,10 @@ div #id_member_type label {
   display: flex;
   justify-content: space-between;
 }
+.add-btn-container {
+  display: flex;
+  justify-content: end;
+}
 .btn {
   margin-top: 10px;
   padding: 10px;
@@ -61,3 +65,7 @@ div #id_member_type label {
   border: solid 2px lightgray;
   text-decoration: none;
 }
+/* .btn-save {
+  display: flex;
+  justify-content: end;
+} */

@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  width: 400px;
+  max-width: 400px;
+}
+.title-desc {
+  margin-top: -15px;
+  color: lightgray;
+}
+.line {
+  border-top: 1px solid lightgray;
+}
+
+.add-member-container {
+  display: grid;
+}
+.member-input-container input {
+  height: 25px;
+  margin-top: 10px;
+}
+.member-input-container input::placeholder {
+  color: lightgray;
+}
+.member-input-container label {
+  display: none;
+}
+div #id_member_type {
+  margin-top: 20px;
+}
+div #id_member_type input {
+  margin-bottom: 10px;
+}
+div #id_member_type::before {
+  content: 'Role';
+}
+div #id_member_type label {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px lightgray;
+}
+.btn-container {
+  display: flex;
+  justify-content: end;
+}
+.add-btn-container {
+  display: flex;
+  justify-content: end;
+}
+.btn {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: royalblue;
+  border: none;
+}
+.btn-delete {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: red;
+  background-color: white;
+  border: solid 2px lightgray;
+  text-decoration: none;
+}
