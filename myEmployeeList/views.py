@@ -15,7 +15,8 @@ class TeamMemberList(View):
 class AddTeamMember(View):
   def get(self, request):
     teamMemberForm = TeamMemberForm
-    return render(request, "add.html", {"teamMemberForm" : teamMemberForm })
+    context= {"teamMemberForm" : teamMemberForm }
+    return render(request, "add.html", context)
 
   def post(self, request):
     form = TeamMemberForm(request.POST)
@@ -27,12 +28,13 @@ class EditTeamMember(View):
   def get(self, request, pk):
     selectedTeamMember = TeamMember.objects.get(id = pk)
     selectedTeamMemberForm = TeamMemberForm(instance = selectedTeamMember) 
-    return render(request, "edit.html", {'selectedTeamMemberForm' : selectedTeamMemberForm, 
-    'selectedTeamMemberId': pk})
+    context = {'selectedTeamMemberForm' : selectedTeamMemberForm, 
+    'selectedTeamMemberId': pk}
+    return render(request, "edit.html", context)
 
   def post(self, request, pk):
-    member = TeamMember.objects.get(id = pk)
-    form = TeamMemberForm(request.POST, instance = member)
+    selectedTeamMember = TeamMember.objects.get(id = pk)
+    form = TeamMemberForm(request.POST, instance = selectedTeamMember)
     if form.is_valid():
       form.save()
       return redirect('/')
